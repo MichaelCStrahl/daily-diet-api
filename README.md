@@ -11,7 +11,7 @@
 - [x] O usuário pode apagar uma refeição;
 - [x] O usuário pode listar todas as suas refeições;
 - [x] O usuário pode lista uma única refeição;
-- [ ] O usuário pode recuperar as seguintes métricas:
+- [x] O usuário pode recuperar as seguintes métricas:
   - Quantidade total de refeições registradas;
   - Quantidade total de refeições dentro da dieta;
   - Quantidade total de refeições fora da dieta;
@@ -22,4 +22,4 @@
 - [x] Dever ser possível criar um usuário;
 - [x] Deve ser possível identificar os usuários entre as requisições;
 - [x] Todas refeições devem estar relacionadas a um usuário;
-- [ ] O usuário só pode visualizar, editar e apagar as refeições o qual ele criou;
+- [x] O usuário só pode visualizar, editar e apagar as refeições o qual ele criou;
