@@ -46,4 +46,26 @@ describe('User routes', () => {
       }),
     ])
   })
+
+  it('should be able to delete user', async () => {
+    const createNewUserResponse = await request(app.server)
+      .post('/users')
+      .send({
+        name: 'New User',
+      })
+
+    const cookies = createNewUserResponse.get('Set-Cookie')
+
+    const listUserResponse = await request(app.server)
+      .get('/users')
+      .set('Cookie', cookies)
+      .expect(200)
+
+    const userId = listUserResponse.body.users[0].id
+
+    await request(app.server)
+      .delete(`/users/${userId}`)
+      .set('Cookie', cookies)
+      .expect(204)
+  })
 })

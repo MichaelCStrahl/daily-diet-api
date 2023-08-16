@@ -99,8 +99,6 @@ export async function mealsRoutes(app: FastifyInstance) {
       let auxBestSequency = 0
 
       meals.map((meal) => {
-        console.log(meal)
-
         if (meal.is_on_diet === 1) {
           metrics.totalInDiet++
           auxBestSequency++
@@ -144,7 +142,7 @@ export async function mealsRoutes(app: FastifyInstance) {
       const getMealBodySchema = z.object({
         name: z.string().optional(),
         description: z.string().optional(),
-        date: z.coerce.date().optional(),
+        date: z.string().datetime().optional(),
         isOnDiet: z.boolean().optional(),
       })
 
@@ -216,7 +214,7 @@ export async function mealsRoutes(app: FastifyInstance) {
       const createMealsBodySchema = z.object({
         name: z.string(),
         description: z.string(),
-        date: z.coerce.date(),
+        date: z.string().datetime(),
         isOnDiet: z.boolean(),
       })
 
